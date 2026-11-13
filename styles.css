@@ -1,0 +1,286 @@
+:root {
+  color-scheme: light;
+  font-family:
+    Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+  color: #1f2937;
+  background: #f4f7fb;
+  font-synthesis: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  min-width: 320px;
+  min-height: 100vh;
+  margin: 0;
+  background:
+    radial-gradient(circle at top left, #e0e7ff 0, transparent 34rem),
+    #f4f7fb;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+.contenedor {
+  width: min(100% - 2rem, 960px);
+  margin: 0 auto;
+  padding: 3rem 0 4rem;
+}
+
+.encabezado {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+h1,
+h2,
+p {
+  margin-top: 0;
+}
+
+h1 {
+  margin-bottom: 0;
+  color: #111827;
+  font-size: clamp(2rem, 6vw, 3.25rem);
+  line-height: 1.05;
+  letter-spacing: -0.045em;
+}
+
+h2 {
+  margin-bottom: 1.25rem;
+  color: #111827;
+  font-size: 1.2rem;
+}
+
+.resumen-rachas {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(190px, 1fr));
+  gap: 0.75rem;
+}
+
+.racha {
+  min-width: 190px;
+  padding: 1.25rem 1.5rem;
+  border: 1px solid #fed7aa;
+  border-radius: 1.25rem;
+  background: #fff7ed;
+  box-shadow: 0 14px 30px rgb(154 52 18 / 8%);
+}
+
+.racha > p:first-child {
+  margin-bottom: 0.25rem;
+  color: #9a3412;
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+.racha__valor {
+  display: flex;
+  align-items: baseline;
+  gap: 0.45rem;
+  margin-bottom: 0;
+  color: #7c2d12;
+}
+
+.racha__valor span:first-child {
+  align-self: center;
+  font-size: 1.8rem;
+}
+
+.racha__valor strong {
+  font-size: 2.5rem;
+  line-height: 1;
+}
+
+.racha__valor span:last-child {
+  font-weight: 700;
+}
+
+.tarjeta {
+  padding: 1.5rem;
+  border: 1px solid #e5e7eb;
+  border-radius: 1.25rem;
+  background: #ffffff;
+  box-shadow: 0 18px 45px rgb(15 23 42 / 7%);
+}
+
+.campos {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  gap: 1rem;
+}
+
+label {
+  display: grid;
+  gap: 0.5rem;
+  color: #374151;
+  font-size: 0.88rem;
+  font-weight: 700;
+}
+
+input {
+  width: 100%;
+  min-height: 46px;
+  padding: 0.7rem 0.8rem;
+  border: 1px solid #d1d5db;
+  border-radius: 0.7rem;
+  color: #111827;
+  background: #ffffff;
+  outline: none;
+  transition: border-color 160ms ease, box-shadow 160ms ease;
+}
+
+input::placeholder {
+  color: #9ca3af;
+}
+
+input:focus {
+  border-color: #6366f1;
+  box-shadow: 0 0 0 3px rgb(99 102 241 / 14%);
+}
+
+button {
+  min-height: 46px;
+  margin-top: 1rem;
+  padding: 0.75rem 1.2rem;
+  border: 0;
+  border-radius: 0.7rem;
+  color: #ffffff;
+  background: #4f46e5;
+  font-weight: 800;
+  cursor: pointer;
+  transition: background 160ms ease, transform 160ms ease;
+}
+
+button:hover {
+  background: #4338ca;
+}
+
+button:active {
+  transform: translateY(1px);
+}
+
+button:focus-visible {
+  outline: 3px solid rgb(99 102 241 / 30%);
+  outline-offset: 3px;
+}
+
+.sesiones {
+  margin-top: 2rem;
+}
+
+.sesiones h2 {
+  margin-bottom: 1rem;
+}
+
+.estado-vacio {
+  padding: 2rem;
+  border: 1px dashed #cbd5e1;
+  border-radius: 1rem;
+  color: #64748b;
+  background: rgb(255 255 255 / 55%);
+  text-align: center;
+}
+
+.lista-sesiones {
+  display: grid;
+  gap: 0.75rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.sesion {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1rem 1.15rem;
+  border: 1px solid #e5e7eb;
+  border-radius: 1rem;
+  background: #ffffff;
+}
+
+.sesion__tema {
+  margin-bottom: 0.3rem;
+  color: #111827;
+  font-weight: 800;
+  overflow-wrap: anywhere;
+}
+
+.sesion__fecha {
+  margin-bottom: 0;
+  color: #6b7280;
+  font-size: 0.85rem;
+}
+
+.sesion__minutos {
+  flex: 0 0 auto;
+  padding: 0.45rem 0.75rem;
+  border-radius: 999px;
+  color: #3730a3;
+  background: #eef2ff;
+  font-size: 0.88rem;
+  font-weight: 800;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+@media (max-width: 680px) {
+  .contenedor {
+    width: min(100% - 1.25rem, 960px);
+    padding-top: 1.5rem;
+  }
+
+  .encabezado {
+    align-items: stretch;
+    flex-direction: column;
+    gap: 1.25rem;
+  }
+
+  .racha {
+    min-width: 0;
+  }
+
+  .resumen-rachas {
+    grid-template-columns: 1fr;
+  }
+
+  .campos {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .campo-tema {
+    grid-column: 1 / -1;
+    grid-row: 1;
+  }
+
+  button {
+    width: 100%;
+  }
+}
+
+@media (max-width: 420px) {
+  .campos {
+    grid-template-columns: 1fr;
+  }
+
+  .campo-tema {
+    grid-column: auto;
+    grid-row: auto;
+  }
+
+  .sesion {
+    align-items: flex-start;
+  }
+}

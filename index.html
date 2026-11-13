@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Registra tus sesiones de estudio y mantén viva tu racha."
+    />
+    <title>Diario de Estudio</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="contenedor">
+      <header class="encabezado">
+        <div>
+          <h1>Diario de Estudio</h1>
+        </div>
+
+        <div class="resumen-rachas">
+          <section class="racha" aria-labelledby="titulo-racha">
+            <p id="titulo-racha">Racha actual</p>
+            <p class="racha__valor" aria-live="polite">
+              <span aria-hidden="true">🔥</span>
+              <strong id="dias-racha">0</strong>
+              <span id="unidad-racha">días</span>
+            </p>
+          </section>
+
+          <section class="racha" aria-labelledby="titulo-mejor-racha">
+            <p id="titulo-mejor-racha">Mejor racha</p>
+            <p class="racha__valor" aria-live="polite">
+              <span aria-hidden="true">🏆</span>
+              <strong id="dias-mejor-racha">0</strong>
+              <span id="unidad-mejor-racha">días</span>
+            </p>
+          </section>
+        </div>
+      </header>
+
+      <section class="tarjeta" aria-labelledby="titulo-formulario">
+        <h2 id="titulo-formulario">Registrar una sesión</h2>
+
+        <form id="formulario-sesion">
+          <div class="campos">
+            <label>
+              Fecha
+              <input id="fecha" name="fecha" type="date" required />
+            </label>
+
+            <label class="campo-tema">
+              Tema
+              <input
+                id="tema"
+                name="tema"
+                type="text"
+                placeholder="Ej. JavaScript"
+                autocomplete="off"
+                required
+              />
+            </label>
+
+            <label>
+              Minutos
+              <input
+                id="minutos"
+                name="minutos"
+                type="number"
+                placeholder="Ej. 45"
+                min="1"
+                step="1"
+                inputmode="numeric"
+                required
+              />
+            </label>
+          </div>
+
+          <button type="submit">Guardar sesión</button>
+        </form>
+      </section>
+
+      <section class="sesiones" aria-labelledby="titulo-sesiones">
+        <h2 id="titulo-sesiones">Mis sesiones</h2>
+        <p id="sin-sesiones" class="estado-vacio">
+          Aún no hay sesiones registradas.
+        </p>
+        <ul id="lista-sesiones" class="lista-sesiones"></ul>
+      </section>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
